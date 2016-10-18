@@ -69,7 +69,7 @@
     private function parserInclude() {
       $patten = '/\{include\s+file=\"([\w\.\-]+)\"\}/';
       //验证include是否存在
-      if(preg_match($patten, $this->tplContent), $file) { //将匹配的，存放到$file数组中
+      if(preg_match($patten, $this->tplContent, $file)) { //将匹配的，存放到$file数组中
         //验证文件是否存在
         if(!file_exists($file[1]) OR empty($file)) {
           exit('Error：所包含的文件不存在！');
